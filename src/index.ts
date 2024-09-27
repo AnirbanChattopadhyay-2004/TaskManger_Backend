@@ -167,3 +167,17 @@ app.get("/api/getName",(req:Request,res:Response)=>{
 app.listen(3000, () => {
   console.log("Listening on port 3000");
 });
+
+const url = "https://taskmanger-backend.onrender.com"
+
+function reloadWebsite() {
+    fetch(url)
+    .then(response => {
+        console.log(response.status);
+    })
+    .catch(error => {
+        console.error(error.message);
+    });
+}
+
+setInterval(reloadWebsite, 30000);
